@@ -2,14 +2,15 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 
 const App = function () {
-	const [users, setUsers] = useState(null);
+	const [users, setUsers] = useState("");
 
 	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
 	useEffect(() => {
 		axios
-			.get("backend/api/users")
-			.then((users) => setUsers(users))
+			.get("http://localhost:5000/api/users")
+      // .get("/api/users")
+			.then((users) => setUsers(users.data))
 			.catch((err) => console.log(err));
 	}, []);
 
