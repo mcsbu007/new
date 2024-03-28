@@ -2,13 +2,13 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 
 const App = function () {
-	const [users, setUsers] = useState("");
+	const [users, setUsers] = useState(null);
 
 	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
 	useEffect(() => {
 		axios
-			.get("/api/users")
+			.get("http://localhost:5000/api/users")
       // .get("/api/users")
 			.then((users) => setUsers(users.data))
 			.catch((err) => console.log(err));
