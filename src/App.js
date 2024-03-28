@@ -8,7 +8,7 @@ const App = function () {
 	const [email, setEmail] = useState("");
 	useEffect(() => {
 		axios
-			.get("/backend/api/users")
+			.get("/api/users")
       // .get("/api/users")
 			.then((users) => setUsers(users.data))
 			.catch((err) => console.log(err));
